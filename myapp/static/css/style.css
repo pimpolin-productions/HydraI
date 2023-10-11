@@ -1,0 +1,75 @@
+:root {
+  --main-color: #ff9a76;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#left-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+#title-section {
+  display: flex;
+  height: 10%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+#title {
+  font-size: 2em;
+}
+.textarea-box {
+  height: 100%;
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  vertical-align: top;
+  resize: none;
+  overflow: auto;
+}
+#section1 {
+  height: 40%;
+  background-color: white;
+  padding: 10px;
+}
+#section2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+  background-color: white;
+  padding: 10px;
+}
+.run-button {
+  font-size: 1vw;
+  width: 40%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+#section3 {
+  height: 40%;
+  background-color: white;
+  padding: 10px;
+}
+#right-section {
+  width: 70%;
+  background-color: black;
+}
+#hydra-canvas {
+  height: 100%;
+  width: 100%;
+}

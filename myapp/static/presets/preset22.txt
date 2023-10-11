@@ -1,0 +1,8 @@
+osc(20, 0.03, 0.214)
+	.kaleid()
+	.mult(osc(20, 0.001, 0.422)
+		.rotate(1.58))
+	.blend(o0, 0.94)
+	.modulateScale(osc(11.915, 0), -0.059)
+	.scale(0.8, () => 1.367 + 0.188 * Math.sin(0.024 * time))
+	.out(o0);

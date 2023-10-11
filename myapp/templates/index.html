@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"i>
+<title>HydraI</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+<script src="https://unpkg.com/hydra-synth"></script>
+</head>
+<body>
+  <div id="left-section">
+    <div id="title-section">
+      <h1 id id="title">HydraI</h1>
+    </div>
+    <div id="section1">
+      <textarea class="textarea-box" placeholder="Ask the AI for the code..."></textarea>
+    </div>
+    <div id="section2">
+      <button id="ai-button" class="run-button">Click to ask the AI</button>
+      <!-- <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/down--v1.png" alt="down--v1"/> -->
+      <img id="arrow-gif" src="static/images/down-arrow.png" alt="Down arrow image">
+      <button id="randomize-button" class="run-button">Click for random effect</button>
+    </div>
+    <div id="section3">
+      <textarea id="code-textarea" class="textarea-box" placeholder="Code..."></textarea>
+    </div>
+  </div> 
+  
+  <div id="right-section">
+    <canvas width="1280" height="720" id="hydra-canvas"></canvas>
+  </div>
+<script type='module' src='static/js/hydra.js' ></script>
+<script type='module' src="static/js/ai.js"></script>
+<script type='module' src="static/js/main.js"></script>
+</body>
+</html>
