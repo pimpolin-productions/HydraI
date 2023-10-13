@@ -12,3 +12,4 @@ export function runGif() {
 export function aiRequest() {
   console.log('hola')
 }
+

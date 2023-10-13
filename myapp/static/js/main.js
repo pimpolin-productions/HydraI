@@ -7,5 +7,6 @@ document.getElementById("ai-button").addEventListener('click', function() {
 });
 
 document.getElementById("randomize-button").addEventListener('click', function() {
-  importPrese();
+  importPreset();
 })
+

@@ -37,3 +37,4 @@ export function loadHydraScript(scriptContent) {
   // Update the placeholder with the script content
   document.getElementById('code-textarea').textContent = scriptContent;
 }
+
