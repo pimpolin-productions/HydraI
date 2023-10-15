@@ -5,8 +5,8 @@ export function loadHydraScript(scriptContent) {
     document.head.removeChild(existingScript);
   }
    // Remove the previous canvas element
-  const existingCanvas = document.getElementById('hydra-canvas');
-  if (existingCanvas) {
+  const existingRS = document.getElementById('right-section');
+  if (existingRS.textContent != '') {
     document.getElementById('right-section').textContent = '';
   }
 
