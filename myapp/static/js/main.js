@@ -1,8 +1,12 @@
-import { aiRequest, runGif } from './ai.js'
+import { runGif } from './rungif.js'
 import { loadHydraScript } from './hydra.js'
 import { importPreset } from './load_preset.js'
 
-document.getElementById("ai-button").addEventListener('click', function() {
+const form = document.getElementById("ai-form");
+const aiButton = document.getElementById("ai-button");
+
+aiButton.addEventListener('click', function() {
+  form.submit();
   runGif();
 });
 

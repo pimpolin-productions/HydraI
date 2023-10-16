@@ -9,7 +9,3 @@ export function runGif() {
   }, 1180);
 }
 
-export function aiRequest() {
-  console.log('hola')
-}
-

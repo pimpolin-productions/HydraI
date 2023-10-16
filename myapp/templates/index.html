@@ -14,16 +14,20 @@
 <body>
   <div id="left-section">
     <div id="title-section">
-      <h1 id id="title">HydraI</h1>
+      <a id="title-link" href='/'><h1 id="title">HydraI</h1></a>
     </div>
     <div id="section1">
-      <textarea class="textarea-box" placeholder="Ask the AI for the code..."></textarea>
+      <form id="ai-form" class="form" method="post">
+        {% csrf_token %}
+        <textarea name="text_input" class="textarea-box" placeholder="Ask the AI for the code..."></textarea>
+        <button type="submit" style="display: none"></button>
+      </form>
     </div>
     <div id="section2">
-      <button id="ai-button" class="run-button">Click to ask the AI</button>
+      <button id="ai-button" class="run-button" type="button" >Click to ask the AI</button>
       <!-- <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/down--v1.png" alt="down--v1"/> -->
       <img id="arrow-gif" src="static/images/down-arrow.png" alt="Down arrow image">
-      <button id="randomize-button" class="run-button">Click for random effect</button>
+      <button id="randomize-button" class="run-button" type="button" >Click for random effect</button>
     </div>
     <div id="section3">
       <textarea id="code-textarea" class="textarea-box" placeholder="Code..."></textarea>
@@ -38,7 +42,7 @@
   </div>
 <script type='module' src='static/js/hydra.js' ></script>
 <script type='module' src='static/js/load_preset.js' ></script>
-<script type='module' src="static/js/ai.js"></script>
+<script type='module' src="static/js/rungif.js"></script>
 <script type='module' src="static/js/main.js"></script>
 </body>
 </html>
