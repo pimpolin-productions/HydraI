@@ -32,7 +32,6 @@ openai.api_key = api_key
 
 def home(request):
     ai_response = None
-    response = 1
     if api_key is not None and request.method == 'POST':
         text_input = request.POST.get('text_input')
         prompt = text_input 
