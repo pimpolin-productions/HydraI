@@ -32,7 +32,9 @@ openai.api_key = api_key
 
 def home(request):
     ai_response = None
+    response = None
     if api_key is not None and request.method == 'POST':
+        print('form submitted')
         text_input = request.POST.get('text_input')
         prompt = text_input 
         if text_input != '':
@@ -42,7 +44,8 @@ def home(request):
                     temperature = 1
                     )
         else:
+            print('empty form')
             response = ''
-    print(response)
+        print(response)
     return render(request, "index.html", {'response': response})
 

@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
         'localhost',
-        '127.0.0.1'
+        '127.0.0.1',
+        '192.168.0.25'
         ]
 
 
@@ -120,7 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+#STATICFILES-DIRS = [
+#        os.path.join(BASE_DIR, 'myapp/static')
+#        ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
