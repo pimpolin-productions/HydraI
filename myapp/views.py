@@ -46,7 +46,7 @@ def home(request):
                     )
         else:
             print('empty form')
-            response = 101
+            response = 202 
         print(response)
     return render(request, "index.html", {'response': response})
 
