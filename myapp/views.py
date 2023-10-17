@@ -1,4 +1,5 @@
 import openai, os, random
+from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 from dotenv import load_dotenv
@@ -9,8 +10,8 @@ load_dotenv()
 
 
 def filefetch(request):
-    
-    folder_path = 'myapp/static/presets/'
+    print(settings.BASE_DIR) 
+    folder_path = os.path.join(settings.BASE_DIR, 'myapp/static/presets/')
 
     file_list = os.listdir(folder_path)
 
@@ -32,7 +33,7 @@ openai.api_key = api_key
 
 def home(request):
     ai_response = None
-    response = None
+    response = 101
     if api_key is not None and request.method == 'POST':
         print('form submitted')
         text_input = request.POST.get('text_input')
@@ -45,7 +46,7 @@ def home(request):
                     )
         else:
             print('empty form')
-            response = ''
+            response = 101
         print(response)
     return render(request, "index.html", {'response': response})
 

@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"i>
   <title>HydraI</title>
   {% load static %}
+  <script>
+    window.data = { response: {{ response|safe}}}
+  </script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico'%}">
   <script src="https://unpkg.com/hydra-synth"></script>

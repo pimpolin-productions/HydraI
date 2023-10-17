@@ -2,14 +2,30 @@ import { runGif } from './rungif.js'
 import { loadHydraScript } from './hydra.js'
 import { importPreset } from './load_preset.js'
 
-const form = document.getElementById("ai-form");
+const aiForm = document.getElementById("ai-form");
 const aiButton = document.getElementById("ai-button");
+const randomButton = document.getElementById("randomize-button");
+let response = window.data;
+
 
 aiButton.addEventListener('click', function() {
-  document.getElementById('');
+  console.log("z");
+  aiForm.submit()
 });
 
-document.getElementById("randomize-button").addEventListener('click', function() {
+aiForm.addEventListener('submit', function (event) {
+  console.log('aaa')
+  event.preventDefault();
+  while (true) {
+    console.log('x')
+    if (response !== 101) {
+      loadHydraScript(response);
+      break;
+    }
+  }
+});
+
+randomButton.addEventListener('click', function() {
   importPreset();
 })
 
