@@ -8,9 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"i>
   <title>HydraI</title>
   {% load static %}
-  <script>
-    window.data = { response: {{ response|safe}}}
-  </script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico'%}">
   <script src="https://unpkg.com/hydra-synth"></script>
@@ -36,16 +33,47 @@
       <textarea id="code-textarea" class="textarea-box" placeholder="Code..."></textarea>
     </div>
   </div> 
-  
   <div id="right-section">
-    <h1 class="padding">~ > HydraI es un proyecto basado en Hydra, un sintetizador de video que funciona sobre el navegador. Implementamos la IA para crear los visuales.</h1>
-    <h1 class="padding">~ > Describa detalladamente el visual que desea crear en el espacio de arriba y luego clickee el primer boton. Para ejemplos prediseñados clickee el segundo.</h1>
-    <h1 class="padding">~ > Creado por Luciano Cadile y Pablo Gutierrez.</h1>
-    <h1 class="padding">~ > Inspirado en Hydra por Olivia Jack.</h1>
+    <div id="help-instructions">
+      <h1>~ > HydraI es un proyecto basado en Hydra, un sintetizador de video que funciona sobre el navegador. Implementamos la IA para crear los visuales.</h1>
+      <h1>~ > Describa detalladamente el visual que desea crear en el espacio de arriba y luego clickee el primer boton. Para ejemplos prediseñados clickee el segundo.</h1>
+    </div>
+    <div id="help-credits">
+      <h1>~ > Creado por Luciano Cadile y Pablo Gutierrez.</h1>
+      <h1>~ > Inspirado en Hydra por Olivia Jack.</h1>
+    </div>
   </div>
 <script type='module' src="{% static 'js/hydra.js' %}"></script>
 <script type='module' src="{% static 'js/load_preset.js' %}"></script>
 <script type='module' src="{% static 'js/rungif.js' %}"></script>
 <script type='module' src="{% static 'js/main.js' %}"></script>
+<script type='module'>
+  import { loadHydraScript } from "{% static 'js/hydra.js' %}"
+  import { runGif } from "{% static 'js/rungif.js' %}" 
+  document.getElementById("ai-form").addEventListener('submit', function (event) {
+    event.preventDefault();
+    let i = 0;
+    function iterate() {
+      if (i < 30) {
+        i++;
+        let data = { response: "{{ response|safe }}" }
+        let response = data.response
+        console.log(response)
+        if (response !== '101' && response !== '202') {
+          runGif();
+          console.log(response);
+          loadHydraScript(response);
+          return;
+        }
+        if (i == 30) {
+          alert("You need to input something!\nBonk!!!");
+          return;
+        }
+        setTimeout(iterate, 20);
+      }
+    }
+    iterate();
+  });
+</script>
 </body>
 </html>

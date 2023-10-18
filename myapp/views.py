@@ -31,19 +31,27 @@ def filefetch(request):
 api_key = os.getenv("OPENAI_KEY", None)
 openai.api_key = api_key
 
+first_time = True
+
 def home(request):
     ai_response = None
     response = 101
     if api_key is not None and request.method == 'POST':
         print('form submitted')
         text_input = request.POST.get('text_input')
-        prompt = text_input 
+
+        if first_time == False:
+            prompt = text_input
+        else:
+            prompt = f"Give me only hydra code, no comments: {text_input}"
+
         if text_input != '':
             response = openai.Completion.create(
                     engine = 'gpt-3.5-turbo',
                     prompt = prompt,
                     temperature = 1
                     )
+            first_time = False
         else:
             print('empty form')
             response = 202 
