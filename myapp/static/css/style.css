@@ -100,16 +100,22 @@ body {
   height: 100%;
   width: 100%;
 }
+.link-green {
+  color: green;
+}
 @media (max-width: 700px) {
   body {
     flex-direction: column;
   }
   #left-section {
-    height: 40%;
+    height: 175vw;
     width: 100%;
   }
+  .run-button {
+    font-size: 3vw;
+  }
   #right-section {
-    height: 60%;
+    height: 150vw;
     width: 100%;
   }
   #help-instructions {
