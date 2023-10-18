@@ -25,7 +25,7 @@ ALLOWED_IP = os.getenv('ALLOWED_IP')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ALLOWED_IP]
+ALLOWED_HOSTS = [ALLOWED_IP, 'hydrai.live']
 
 
 # Application definition
