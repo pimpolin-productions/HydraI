@@ -117,7 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-#STATIC_ROOT = /path/to/static/destination
+STATIC_ROOT = os.getenv('STATIC_ROOT')
 
 
 # Default primary key field type
