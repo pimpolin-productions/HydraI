@@ -4,8 +4,7 @@ export function loadHydraScript(scriptContent) {
   if (existingScript) {
     document.head.removeChild(existingScript);
   }
-  console.log(scriptContent);
-   // Remove the previous canvas element
+  // Remove the previous canvas element
   document.getElementById('right-section').textContent = '';
 
   // Create a new canvas element
