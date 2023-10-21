@@ -38,10 +38,12 @@
       <h1>~ > HydraI is a web project based on the video synthetizer Hydra, implementing AI into the mix to make it easier for people without previous coding knowledge.</h1>
       <h1>~ > So just go ahead and ask the AI whatever you want to see, more complex promts produce better results, the AI will print it out after hitting the "Click to ask the AI".</h1>
       <h1>~ > But if you dont want to mess with the AI, you can always use the "Click for random effect" button to get a random visual from a hand picked list.</h1>
+      <h1>~ > You can also write your own or edit the presets in the code box, then just press Shift + Enter to see it.</h1>
     </div>
     <div id="help-credits">
       <h1>~ > Made by <a class="link-green" href="https://github.com/asdyy8">Luciano Cadile</a> & <a class="link-green" href="https://github.com/maipley">Pablo Gutierrez</a>.</h1>
       <h1>~ > Inspired on <a class="link-green" href="https://hydra.ojack.xyz">Hydra by Olivia Jack</a>.</h1>
+      <h1>~ > You can find all the code our <a class="link-green" href="https://github.com/pimpolin-productions/HydraI">GitHub repo</a>.</h1>
     </div>
   </div>
 <script type='module' src="{% static 'js/hydra.js' %}"></script>
@@ -49,31 +51,9 @@
 <script type='module' src="{% static 'js/rungif.js' %}"></script>
 <script type='module' src="{% static 'js/main.js' %}"></script>
 <script type='module'>
-  import { loadHydraScript } from "{% static 'js/hydra.js' %}"
-  import { runGif } from "{% static 'js/rungif.js' %}" 
   document.getElementById("ai-form").addEventListener('submit', function (event) {
     event.preventDefault();
-    let i = 0;
-    function iterate() {
-      if (i < 30) {
-        i++;
-        let data = { response: "{{ response|safe }}" }
-        let response = data.response
-        console.log(response)
-        if (response !== '101' && response !== '202') {
-          runGif();
-          console.log(response);
-          loadHydraScript(response);
-          return;
-        }
-        if (i == 30) {
-          alert("You need to input something!\nBonk!!!");
-          return;
-        }
-        setTimeout(iterate, 20);
-      }
-    }
-    iterate();
+    alert("Sorry, this feature is still under construction.")
   });
 </script>
 </body>

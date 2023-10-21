@@ -10,7 +10,6 @@ load_dotenv()
 
 
 def filefetch(request):
-    print(settings.BASE_DIR) 
     folder_path = os.path.join(settings.BASE_DIR, 'myapp/static/presets/')
 
     file_list = os.listdir(folder_path)
@@ -19,7 +18,7 @@ def filefetch(request):
         response = "The folder is empty"
     else:
         random_file = random.choice(file_list)
-
+        print(random_file)
         sfp = os.path.join(folder_path, random_file)
 
         with open(sfp, 'r') as file:

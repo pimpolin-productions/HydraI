@@ -5,11 +5,16 @@ import { importPreset } from './load_preset.js'
 const aiForm = document.getElementById("ai-form");
 const aiButton = document.getElementById("ai-button");
 const randomButton = document.getElementById("randomize-button");
+const codeTextarea = document.getElementById("code-textarea")
+codeTextarea.addEventListener('keydown', function(event){
+  if (event.key === "Enter" && event.shiftKey) {
+    event.preventDefault();
 
-//aiButton.addEventListener('click', function() {
-//  console.log(response.response);
-//  aiForm.submit();
-//});
+    const text = codeTextarea.value;
+    if (text !== '')
+      loadHydraScript(text);
+  }
+});
 
 randomButton.addEventListener('click', function() {
   importPreset();
